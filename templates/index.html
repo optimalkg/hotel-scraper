@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profitroom Analyzer MVP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Profitroom Analyzer (MVP)</h1>
+
+      <section class="panel">
+        <h2>Daty pobytu</h2>
+        <div class="date-grid">
+          <label>
+            Check-in
+            <input type="date" id="check-in" value="{{ config['dates']['check_in'] }}" />
+          </label>
+          <label>
+            Check-out
+            <input type="date" id="check-out" value="{{ config['dates']['check_out'] }}" />
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Hotele</h2>
+          <button id="add-hotel" class="secondary">Dodaj hotel</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Nazwa</th>
+              <th>Link</th>
+              <th>Akcje</th>
+            </tr>
+          </thead>
+          <tbody id="hotels-table-body">
+            {% for hotel in config['hotels'] %}
+            <tr>
+              <td><input type="text" class="hotel-name" value="{{ hotel['name'] }}" /></td>
+              <td><input type="url" class="hotel-url" value="{{ hotel['url'] }}" /></td>
+              <td><button class="danger delete-hotel">Usuń</button></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <section class="actions">
+        <button id="save-config">Zapisz ustawienia</button>
+        <button id="run-analysis">Uruchom analizę</button>
+      </section>
+
+      <section class="panel">
+        <h2>Status</h2>
+        <pre id="status-box">Gotowe.</pre>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

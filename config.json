@@ -1,0 +1,20 @@
+{
+  "hotels": [
+    {
+      "name": "AQUARIUS",
+      "url": "https://booking.profitroom.com/pl/hotelaquariusspa/pricelist/rooms/?currency=PLN"
+    },
+    {
+      "name": "HAVET",
+      "url": "https://booking.profitroom.com/pl/havethotelresortspadzwirzyno1/pricelist/rooms/?currency=PLN"
+    },
+    {
+      "name": "GRAND",
+      "url": "https://booking.profitroom.com/pl/grandlubiczuzdrowiskoustka3/pricelist/rooms/?currency=PLN"
+    }
+  ],
+  "dates": {
+    "check_in": "2026-05-11",
+    "check_out": "2026-05-14"
+  }
+}
